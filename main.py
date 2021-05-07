@@ -140,14 +140,14 @@ class Game:
                         if collision(self.snake.x[0], self.snake.y[0], self.snake.x[i], self.snake.y[i]):
                             play_sound("1_snake_game_resources_crash")
                             raise CollisionException("Collision with yourself!")
-                    if not (0 <= self.snake.x[0] <= 500 and 0 <= self.snake.y[0] <= 500):
+                    if not (0 <= self.snake.x[0] <= 1000 and 0 <= self.snake.y[0] <= 500):
                         play_sound("1_snake_game_resources_crash")
                         raise CollisionException("Collision with boundary!")
             except CollisionException:
                 self.game_over()
                 pause = True
                 self.reset()
-            time.sleep(0.25)
+            time.sleep(0.3)
 
     def display_score(self):
         font = pygame.font.SysFont('arial', 30)
